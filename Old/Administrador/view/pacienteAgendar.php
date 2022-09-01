@@ -6,6 +6,7 @@ include_once 'Administrador.php';
 $adm = new Administrador();
 $dadosPosto = $adm->postoPegarDados($_SESSION['posto']);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

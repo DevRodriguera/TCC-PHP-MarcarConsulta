@@ -31,9 +31,6 @@
           <button class="btn btn-outline-success" type="submit" value="admLogin">Entrar</button>
         </div>
       </form>
-      <div>
-        teste de commmit
-      </div>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

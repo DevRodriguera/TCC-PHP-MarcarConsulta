@@ -69,7 +69,6 @@ $dadosPosto = $adm->postoPegarDados($_SESSION['posto']);
 
             <form action="" method="post">
               <div class="form-row">
-
                 <div class="col-md-6 mb-3">
                   <label for="validationCustom01">Paciente</label>
                   <?php echo $adm->pacienteSelect($_SESSION['posto']);?>
@@ -92,9 +91,7 @@ $dadosPosto = $adm->postoPegarDados($_SESSION['posto']);
                     </div>
                 </div>
               </div>
-
               <div class="form-row">
-
                 <div class="col-md-6 mb-3">
                   <label for="validationCustom04">Profissional</label>
                   <?php echo $adm->profissionalSelect($_SESSION['posto']);?>

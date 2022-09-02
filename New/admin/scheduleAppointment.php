@@ -12,7 +12,7 @@
   </header>
   <main>
     <div class="container">
-      <div class="row">
+      <div class="row mt-5 mb-5">
         <div class="col">
           <h1>Agendar Consulta</h1>
         </div>
@@ -20,16 +20,39 @@
       <div class="row">
         <div class="col">
           <form action="" method="post">
-            <input type="text" name="" id="" class="form-control">
-            <label>ID/SUS</label>
-
-            <select class="form-select" name="" id="">
-              <option>Posto 1</option>
-              <option>Posto 2</option>
-              <option>Posto 3</option>
-            </select>
-
-            
+            <div class="form-floating mb-4">
+              <input type="text" name="" id="" class="form-control" id="pacienteId" placeholder="name@example.com">
+              <label for="Floating label ID">ID/SUS</label>
+            </div>
+            <div class="form-floating mb-4">
+              <select class="form-select" name="" id="" aria-label="Floating label select example">
+                <option>Posto 1</option>
+                <option>Posto 2</option>
+                <option>Posto 3</option>
+              </select>
+              <label for="floatingSelect">Paciente</label>
+            </div>
+            <div class="form-floating mb-4">
+              <select class="form-select" name="" id="" aria-label="Floating label select example">
+                <option>Posto 1</option>
+                <option>Posto 2</option>
+                <option>Posto 3</option>
+              </select>
+              <label for="floatingSelect">Area</label>
+            </div>
+            <div class="form-floating mb-4">
+              <select class="form-select" name="" id="" aria-label="Floating label select example">
+                <option>Posto 1</option>
+                <option>Posto 2</option>
+                <option>Posto 3</option>
+              </select>
+              <label for="floatingSelect">Profissionais disponiveis</label>
+            </div>
+            <div class="form-floating mb-4">
+              <input type="date" name="" id="" class="form-control" placeholder="">
+              <label for="">A data</label>
+            </div>
+            <button type="submit" class="btn btn-outline-primary mx-auto">Agendar</button>
           </form>
         </div>
       </div>

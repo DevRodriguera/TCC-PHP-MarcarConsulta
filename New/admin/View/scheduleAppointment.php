@@ -52,7 +52,7 @@
               <input type="date" name="" id="" class="form-control" placeholder="">
               <label for="">A data</label>
             </div>
-            <button type="submit" class="btn btn-outline-primary mx-auto">Agendar</button>
+            <button type="submit" class="btn btn-outline-primary mx-auto" value="agendarConsulta">Agendar</button>
           </form>
         </div>
       </div>

@@ -12,7 +12,7 @@
   </header>
   <main>
     <div class="container">
-      <div class="row mt-5 mb-5">
+      <div class="row">
         <div class="col">
           <h1>Agendar Consulta</h1>
         </div>
@@ -52,7 +52,9 @@
               <input type="date" name="" id="" class="form-control" placeholder="">
               <label for="">A data</label>
             </div>
-            <button type="submit" class="btn btn-outline-primary mx-auto" value="agendarConsulta">Agendar</button>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-outline-primary" value="agendarConsulta">Agendar</button>
+            </div>
           </form>
         </div>
       </div>

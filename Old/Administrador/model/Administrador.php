@@ -17,54 +17,36 @@ Class Administrador{
 			die("Problemas com a conexão");
 		}
   }
-    
+  
   public function desconectar(){
 		$this->con->close();
   }
 
   public function pacienteCadastrar($nome , $sexo , $data_nasc , $cpf , $celular , $email , $senha , $cep , $estado , $cidade , $bairro , $rua , $numeroCasa , $complemento , $posto){
-
     $this->conectar();
-
     $sql = "INSERT INTO paciente VALUES(NULL , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )";
-    
     $stm = $this->con->prepare($sql);
-    
     $stm->bind_param("ssssssssssssisi",$nome, $sexo, $data_nasc, $cpf, $celular, $email, $senha, $cep, $estado, $cidade, $bairro, $rua, $numeroCasa, $complemento,$posto);
     $stm->execute();
     $stm->close();
-    
     $this->desconectar();
   }
 
   public function pacienteAlterar($codigo , $nome , $sexo , $data_nasc , $cpf , $celular , $email , $senha , $cep , $estado , $cidade , $bairro , $rua , $numeroCasa , $complemento){
-    
     $retorno = null;
-    
     $this->conectar();
-
     $stm=$this->con->prepare("UPDATE paciente SET nome = ?, sexo = ?, data_nasc = ?, cpf = ?, celular = ?, email = ?, senha = ?, cep = ?, estado = ?, cidade = ?, bairro = ?, rua = ?, numeroCasa = ?, complemento = ? WHERE id = $codigo");
-
     $stm->bind_param("ssssssssssssis" , $nome , $sexo , $data_nasc , $cpf , $celular , $email , $senha , $cep , $estado , $cidade , $bairro , $rua , $numeroCasa , $complemento);
-
     $stm->execute();
-
     $stm->close();
-
     $this->desconectar();
-
   }
 
   public function pacienteExibirDados($posto){
-
     $this->conectar();
-
     $sql = "SELECT * FROM paciente WHERE FK_posto = $posto";
-
     $dados = $this->con->query($sql);
-
     $retorno = null;
-
     if ($dados->num_rows > 0){
       $tabela = '<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
                   <tr>
@@ -86,9 +68,7 @@ Class Administrador{
                   </tr>";
       }
       $tabela .='</table>';
-
       $dados->close();
-
       $retorno = $tabela;
     }else{
       $retorno='<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" >
@@ -102,51 +82,34 @@ Class Administrador{
                   </tr>
                 </table>';
     }
-
     $this->desconectar();
-
     return $retorno;
   }
 
   public function pacientePegarDados($id){
-
     $retorno = null;
-
 		$this->conectar();
-
 		$sql = $this->con->query("SELECT * FROM paciente WHERE pac_id = $id");
-
     $retorno = mysqli_fetch_assoc($sql);
-    
     $this->desconectar();
-
 		return $retorno;
   }
 
   public function agendarConsulta($data, $horaI, $horaF, $posto, $paciente,$profissional){
-
 			$this->conectar();
-
       $sql = "INSERT INTO paciente VALUES(NULL , ? , ? , ? , ? , ? , ?)";
-      
       $stm = $this->con->prepare($sql);
-      
 			$stm->bind_param("ssssss", $data, $horaI, $horaF, $posto, $paciente,$profissional);
 			$stm->execute();
       $stm->close();
-      
 			$this->desconectar();
   }
 
   public function AdministradorLogar($usuario,$senha,$posto){
-
     $this->conectar();
-
     $sql = "SELECT * FROM administradorLogin
             WHERE adm_usuario = '$usuario' AND adm_senha = '$senha' AND FK_posto = '$posto'";
-
     $retorno = $this->con->query($sql);
-
       if ($retorno->num_rows > 0) {
         return true;
       }

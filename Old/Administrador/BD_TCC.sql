@@ -1,5 +1,5 @@
-CREATE DATABASE bd_tcc;
-USE bd_tcc;
+CREATE DATABASE bd_tcc2;
+USE bd_tcc2;
 
 CREATE TABLE Posto(
 posto_id        INT PRIMARY KEY AUTO_INCREMENT,

@@ -8,7 +8,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SRSaúde</title>
-  <link rel="stylesheet" href="index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
@@ -16,20 +15,24 @@
     <div class="container">
       <div class="row">
         <div class="col-5 position-absolute top-50 start-50 translate-middle">
-          <h1 class="text-center ">Saúde em primeiro lugar.</h1>
-          <h5 class="text-center mb-5">Acesse com seu usuário e senha !</h3>
+          <h1 class="text-center mb-4">Register Administrator</h1>
           <form action="../controller/sistema.php" method="post">
-            <input type="hidden" name="type" value="admLogin">
+            <input type="hidden" name="type" value="regAdmin">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="admUsername" id="username" placeholder="Informe o usuário">
+              <input type="text" class="form-control" name="admUsername" id="username" placeholder=".">
               <label for="floatingInput">Username:</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" name="admPassword" id="Password" placeholder="Informe o usuário">
+              <input type="password" class="form-control" name="admPassword" id="password" placeholder=".">
               <label for="floatingInput">Password:</label>
             </div>
             <div class="form-floating mb-3">
-              <select class="form-select" name="admHealthCenter" id="admHealthCenter" aria-label="Informe o usuário">
+              <input type="text" class="form-control" name="admFunction" id="function" placeholder=".">
+              <label for="floatingInput">Function:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select class="form-select" name="admHealthCenter" id="admHealthCenter" aria-label=".">
                 <option value="1">Santa Maria</option>
                 <option value="2">Boava</option>
                 <option value="3">Centro</option>

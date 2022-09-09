@@ -23,11 +23,10 @@ Class Administrator{
     $this->conDatabase->close();
   }
 
-  public function admLogin(){
+  public function admLogin($admUsername,$admPassword){
     $this->conDatabase();
-    $sql = "SELECT * FROM ProfessionalAccess";
+    $sql = "SELECT * FROM ProfessionalAccess WHERE paName = '$admUsername' AND paPassword = '$admPassword'";
     $sqlReturn = $this->conDatabase->query($sql);
-
     if($sqlReturn->num_rows > 0){
       return true;
     }else{

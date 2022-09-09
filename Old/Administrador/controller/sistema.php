@@ -2,11 +2,11 @@
   session_start();
 
   include '../model/Administrador.php';
-  $tipo = $_POST['tipo'];
+  $typeReq = $_POST['typeReq'];
 
   $adm = new Administrador();
 
-  switch($tipo){
+  switch($typeReq){
 
     case 'pacienteCadastrar':
 

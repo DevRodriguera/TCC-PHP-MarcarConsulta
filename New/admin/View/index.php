@@ -18,8 +18,8 @@
         <div class="col-5 position-absolute top-50 start-50 translate-middle">
           <h1 class="text-center ">Saúde em primeiro lugar.</h1>
           <h5 class="text-center mb-5">Acesse com seu usuário e senha !</h3>
-          <form action="../controller/sistema.php" method="post">
-            <input type="hidden" name="type" value="admLogin">
+          <form action="../controller/dataControl.php" method="post">
+            <input type="hidden" name="typeReq" value="admLogin">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" name="admUsername" id="username" placeholder="Informe o usuário">
               <label for="floatingInput">Username:</label>
@@ -28,25 +28,18 @@
               <input type="password" class="form-control" name="admPassword" id="Password" placeholder="Informe o usuário">
               <label for="floatingInput">Password:</label>
             </div>
-            <div class="form-floating mb-3">
+            <!--<div class="form-floating mb-3">
               <select class="form-select" name="admHealthCenter" id="admHealthCenter" aria-label="Informe o usuário">
                 <option value="1">Santa Maria</option>
                 <option value="2">Boava</option>
                 <option value="3">Centro</option>
               </select>
               <label for="floatingInput">Posto de saúde:</label>
-            </div>
+            </div>-->
             <div class="d-grid gap-2">
               <button class="btn btn-success" type="submit" value="admLogin">Entrar</button>
             </div>
           </form>
-          <?php
-            if($adm->admLogin()){
-              echo "Verdade";
-            }else{
-              echo "Mintira";
-            }
-          ?>
         </div>
       </div>
     </div>

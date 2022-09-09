@@ -1,0 +1,7 @@
+Toda funcao ou requisicao sera seguida do nome ou referencia a classe instanciada e 
+seguido do nome da funcao.
+
+ex : Classe = Client -> cliLogin
+ex forms html : <input... name="cliName">
+
+No banco de dados tambem seguira o mesmo padrao, para evitar conflitos e confusoes futuras.

@@ -1,6 +1,12 @@
 <?php
   include_once '../Model/Administrator.php';
   $adm = new Administrator();
+  
+echo "<script>
+        window.alert('Você não preencheu usuário e/ou senha!');
+        javascript:history.go(-1);
+      </script>";
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -21,8 +27,8 @@
           <form action="../controller/dataControl.php" method="post">
             <input type="hidden" name="typeReq" value="admLogin">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="admUsername" id="username" placeholder="Informe o usuário">
-              <label for="floatingInput">Username:</label>
+              <input type="text" class="form-control" name="admEmail" id="email" placeholder="Informe o email">
+              <label for="floatingInput">Email:</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" name="admPassword" id="Password" placeholder="Informe o usuário">

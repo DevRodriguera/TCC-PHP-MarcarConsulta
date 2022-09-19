@@ -6,12 +6,12 @@
 
     switch($typeReq){
         case 'admLogin':
-            $admUsername = $_POST['admUsername'];
+            $admEmail = $_POST['admEmail'];
             $admPassword = $_POST['admPassword'];
-            if($adm->admLogin($admUsername,$admPassword)){
+            if($adm->admLogin($admEmail,$admPassword)){
                 header('location: ../view/home.php');
             }else{
-                header('location: ../view/home.php');
+                header('location: ../view/index.php?errData="Dados incorretos!"');
             }
         break;
     }

@@ -36,31 +36,26 @@
 				<span class="contact100-form-title">
 					Logar-se
 				</span>
-
 				<label class="label-input100" for="first-name">Usuário</label>
 				<div class="wrap-input100 validate-input" data-validate="Type first name">
 					<input id="first-name" class="input100" type="text" name="usuario" placeholder="Informe o usuário">
 					<span class="focus-input100"></span>
 				</div>
-
 				<label class="label-input100" for="email">Senha</label>
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<input id="email" class="input100" type="password" name="senha" placeholder="Informe a senha">
 					<span class="focus-input100"></span>
 				</div>
-
 				<label class="label-input100" for="phone">Posto de Saúde</label>
 				<div class="wrap-input100">
 					<?php echo utf8_encode($adm->selectPosto());?>
 				</div>
-
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn" type="submit" value="AdministradorLogar">
 						Entrar
 					</button>
 				</div>
 			</form>
-
 			<div class="contact100-more flex-col-c-m" style="background-image: url('../images/bg-img2.jpg');">
 
 				<div class="dis-flex size1 p-b-47">

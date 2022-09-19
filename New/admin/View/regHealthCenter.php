@@ -43,13 +43,6 @@
               <button class="btn btn-success" type="submit" value="admLogin">Entrar</button>
             </div>
           </form>
-          <?php
-            if($adm->admLogin()){
-              echo "Verdade";
-            }else{
-              echo "Mintira";
-            }
-          ?>
         </div>
       </div>
     </div>

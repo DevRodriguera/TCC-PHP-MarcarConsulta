@@ -2,20 +2,25 @@
   include_once '../Model/Administrator.php';
   $adm = new Administrator();
   
-echo "<script>
+  if(isset($_GET['errMessage'])){
+    echo "<script>
         window.alert('Você não preencheu usuário e/ou senha!');
         javascript:history.go(-1);
       </script>";
-
+  }
 ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SRSaúde</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Saude</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <style>
+    body{
+    background-color: #1a8835 !important;
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -28,7 +33,7 @@ echo "<script>
             <input type="hidden" name="typeReq" value="admLogin">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" name="admEmail" id="email" placeholder="Informe o email">
-              <label for="floatingInput">Email:</label>
+              <label for="floatingInput" class="form-check-label">Email:</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" name="admPassword" id="Password" placeholder="Informe o usuário">

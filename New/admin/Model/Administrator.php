@@ -72,8 +72,24 @@ Class Administrator{
       $this->descDatabase();
       return $table;
     }else{
-      return "Nenhum administrador cadastrado";
+      return '
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Usuarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Nenhum usuario cadastrado !</th>
+          </tr>
+        </tbody>
+      </table>';
     }
+  }
+
+  public function admFunctionShow(){
+
   }
 
   public function selectPatient(){
@@ -81,16 +97,16 @@ Class Administrator{
     $sql = "SELECT * FROM patient";
     $sqlReturn = $this->conDatabase->query($sql);
     $selectPatient = 0;
-    $return = 0;
 
     if($sqlReturn->num_rows > 0){
       $selectPatient = '
         <div class="form-floating mb-4">
-          <select class="form-select" name="" id="" aria-label="Floating label select example">';
+          <select class="form-select" name="" id="" aria-label="Select">';
       while($dataAdm = $sqlReturn->fetch_array()){
         $selectPatient .= '<option value="'.$dataAdm['paName'].'">'.$dataAdm['paName'].'</option>';
       }
       $selectPatient .= '
+          </select>
           <label for="floatingSelect">Paciente</label>
         </div>';
       $this->descDatabase();
@@ -99,7 +115,7 @@ Class Administrator{
       $this->descDatabase();
       $selectPatient ='
       <div class="form-floating mb-4">
-        <select class="form-select" name="" id="" aria-label="Floating label select example">
+        <select class="form-select" name="" id="" aria-label="Select" disabled>
           <option value="0">Nenhum paciente cadastrado</option>
         </select>
         <label for="floatingSelect">Paciente</label>
@@ -110,33 +126,33 @@ Class Administrator{
 
   public function selectProfessional(){
     $this->conDatabase();
-    $sql = "SELECT * FROM Administrator WHERE ";
+    $sql = "SELECT * FROM administrator";
     $sqlReturn = $this->conDatabase->query($sql);
-    $selectPatient = 0;
-    $return = 0;
+    $selectProfessional = 0;
 
     if($sqlReturn->num_rows > 0){
-      $selectPatient = '
+      $selectProfessional = '
         <div class="form-floating mb-4">
-          <select class="form-select" name="" id="" aria-label="Floating label select example">';
+          <select class="form-select" name="" id="" aria-label="Select">';
       while($dataAdm = $sqlReturn->fetch_array()){
-        $selectPatient .= '<option value="'.$dataAdm['paName'].'">'.$dataAdm['paName'].'</option>';
+        $selectProfessional .= '<option value="">'.$dataAdm['admName'].'</option>';
       }
-      $selectPatient .= '
-          <label for="floatingSelect">Paciente</label>
+      $selectProfessional .= '
+            </select>
+          <label for="floatingSelect">Profissional</label>
         </div>';
       $this->descDatabase();
-      return $selectPatient;
+      return $selectProfessional;
     }else{
       $this->descDatabase();
-      $selectPatient ='
+      $selectProfessional ='
       <div class="form-floating mb-4">
-        <select class="form-select" name="" id="" aria-label="Floating label select example">
-          <option value="0">Nenhum paciente cadastrado</option>
+        <select class="form-select" name="" id="" aria-label="Select" disabled>
+          <option value="0">Nenhum profissional cadastrado</option>
         </select>
-        <label for="floatingSelect">Paciente</label>
+        <label for="floatingSelect">Profissional</label>
       </div>';
-      return $selectPatient;
+      return $selectProfessional;
     }
   }
 

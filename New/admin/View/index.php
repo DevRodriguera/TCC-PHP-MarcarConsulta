@@ -15,26 +15,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saude</title>
+  .bg-image{
+    height: 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    background-image: url("../img/bg_login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-text {
+    background-color: rgb(66,86,116);
+    background-color: rgba(66,86,116,0.5);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  <link rel="stylesheet" href="./styles/login.scss">
+  <link rel="stylesheet" href="./styles/login.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <style>
-    body{
-    background-color: #1a8835 !important;
-    }
-  </style>
 </head>
 <body>
+<!-- <div class="form__group field">
+  <input type="input" class="form__field" placeholder="dsadsa" name="name" id='name' required />
+  <label for="name" class="form__label">Last name please</label>
+</div> -->
+<div class="bg-image"></div>
   <main>
     <div class="container">
       <div class="row">
         <div class="col-5 position-absolute top-50 start-50 translate-middle">
+          <div class="bg-text">
+
           <h1 class="text-center ">Saúde em primeiro lugar.</h1>
           <h5 class="text-center mb-5">Acesse com seu usuário e senha !</h3>
           <form action="../controller/dataControl.php" method="post">
             <input type="hidden" name="typeReq" value="admLogin">
+
             <div class="form-floating mb-3">
               <input type="text" class="form-control" name="admEmail" id="email" placeholder="Informe o email">
               <label for="floatingInput" class="form-check-label">Email:</label>
             </div>
+            
             <div class="form-floating mb-3">
               <input type="password" class="form-control" name="admPassword" id="Password" placeholder="Informe o usuário">
               <label for="floatingInput">Password:</label>
@@ -51,6 +76,7 @@
               <button class="btn btn-success" type="submit" value="admLogin">Entrar</button>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </div>
